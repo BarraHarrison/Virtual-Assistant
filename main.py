@@ -1,2 +1,4 @@
 # Simple Virtual Assistant in Python
-# pip install neuralintents
+from neuralintents import GenericAssistant
+import pandas_datareader as web
+import sys
