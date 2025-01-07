@@ -141,6 +141,36 @@
                 "Let me look into that for you.",
                 "I may not have the answer, but I’ll try to find it for you."
             ]
+        },
+        {
+            "tag": "stocks",
+            "pattern": [
+                "show me the stock prices",
+                "get stock prices",
+                "stock price for Tesla",
+                "stock price for Amazon",
+                "tell me stock updates"
+            ],
+            "responses": [
+                "Sure, let me fetch the stock prices for you.",
+                "I can help with stock updates. Which ticker are you interested in?",
+                "Let me get the latest stock prices for Tesla, Amazon, and others."
+            ]
+        },
+        {
+            "tag": "todos",
+            "pattern": [
+                "show my todos",
+                "what's on my list",
+                "list my tasks",
+                "show my to-do list",
+                "tell me what I need to do"
+            ],
+            "responses": [
+                "Here's your to-do list: Study Korean, Clean the house, Food shopping, Exercise, and Prepare dinner.",
+                "You have 5 tasks: Study Korean, Clean the house, Food shopping, Exercise, and Prepare dinner.",
+                "Your current to-dos are: Study Korean, Clean the house, Food shopping, Exercise, and Prepare dinner."
+            ]
         }
     ]
 }

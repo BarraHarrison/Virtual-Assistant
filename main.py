@@ -49,3 +49,5 @@ def remove_todo():
 def goodbye_function():
     print("Goodbye!")
     sys.exit()
+
+assistant = GenericAssistant(intents)
