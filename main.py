@@ -41,7 +41,7 @@ def add_todo():
 def remove_todo():
     todo_index = int(input("What To-Do do you want to remove (number): ")) - 1
     if todo_index < len(todos):
-        print(f"Removing {todos.index(todo_index)}")
+        print(f"Removing {todos[todo_index]}")
         todos.pop(todo_index)
     else:
         print("There is no To-Do at this position/number")
@@ -50,4 +50,27 @@ def goodbye_function():
     print("Goodbye!")
     sys.exit()
 
-assistant = GenericAssistant(intents)
+
+mappings = {"stocks": stock_function,
+            "todos": show_todos,
+            "farewell": goodbye_function}
+
+assistant = GenericAssistant("short_intents.json", mappings)
+
+
+try:
+    assistant.load_model()
+    print("Model loaded successfully.")
+except Exception:
+    print("Training new model...")
+    assistant.train_model()
+    assistant.save_model()
+    print("Model trained and saved successfully.")
+
+# Main loop for user interaction
+while True:
+    message = input("Message: ")
+    try:
+        assistant.request(message)
+    except Exception as e:
+        print(f"Sorry, I didn't understand that. Error: {e}")
